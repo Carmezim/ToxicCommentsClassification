@@ -62,7 +62,6 @@ class BiLSTM(Model):
                                          decay_rate=self.c.lr_decay,
                                          staircase=False)
 
-            # gradient clipping
             self.optimizer = tf.train.AdamOptimizer(self.lr).minimize(self.cost)
 
             self.correct_scores = tf.equal(tf.argmax(self.scores, 1),
